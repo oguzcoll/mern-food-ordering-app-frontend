@@ -2,17 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import LoadingButton from "./LoadingButton";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import UserProfileForm, {
   UserFormData,
 } from "@/forms/user-profile-form/UserProfileForm";
@@ -59,6 +49,8 @@ const CheckoutButton = ({ onCheckout, disabled }: Props) => {
       </DialogTrigger>
       <DialogContent className="max-w-[425px] md:min-w-[700px] bg-gray-50">
         <UserProfileForm
+          title="Confirm Delivery Details"
+          buttonText="Continue to Payment"
           currentUser={currentUser}
           onSave={onCheckout}
           isLoading={isGetUserLoading}
